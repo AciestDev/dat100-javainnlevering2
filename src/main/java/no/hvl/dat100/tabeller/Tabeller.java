@@ -1,5 +1,7 @@
 package no.hvl.dat100.tabeller;
 
+import java.util.stream.IntStream;
+
 public class Tabeller {
 
 	// a)
@@ -35,8 +37,7 @@ public class Tabeller {
 	// c)
 	public static int summer(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden summer ikke implementert");
+		return IntStream.of(tabell).sum();
 	}
 
 	// d)
