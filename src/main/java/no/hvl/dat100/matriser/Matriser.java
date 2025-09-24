@@ -3,26 +3,48 @@ package no.hvl.dat100.matriser;
 public class Matriser {
 
 	// a)
-	public static void skrivUt(int[][] matrise) {
+	public static void skrivUt1(int[][] matrise) {
 		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+		for (int[] h : matrise) {
+        	for (int l : h) {
+            	System.out.print(l + ",");
+        	}
+        	System.out.println();
+   		}
 	}
 
 	// b)
 	public static String tilStreng(int[][] matrise) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
 		
+		String returnString = "";
+		
+		for (int h = 0; h < matrise.length; h++) {
+			for (int l = 0; l < matrise[h].length; l++) {
+				if (h == 0) {
+					returnString = returnString + matrise[0][l] + " ";
+				}
+
+			}
+		}
+
+		return returnString;
 	}
 
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
 		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skaler ikke implementert");
-	
+		int[][] nyMatrise = new int[matrise.length][];
+		
+		
+		for (int h = 0; h < matrise.length; h++) {
+			nyMatrise[h] = new int[matrise[h].length];
+			
+			for (int l = 0; l < matrise[h].length; l++) {
+				nyMatrise[h][l] = matrise[h][l] * tall;
+			}
+		}
+
+		return nyMatrise;
 	}
 
 	// d)
