@@ -3,7 +3,7 @@ package no.hvl.dat100.matriser;
 public class Matriser {
 
 	// a)
-	public static void skrivUt1(int[][] matrise) {
+	public static void skrivUt(int[][] matrise) {
 		
 		for (int[] h : matrise) {
         	for (int l : h) {
@@ -17,14 +17,12 @@ public class Matriser {
 	public static String tilStreng(int[][] matrise) {
 		
 		String returnString = "";
-		
-		for (int h = 0; h < matrise.length; h++) {
-			for (int l = 0; l < matrise[h].length; l++) {
-				if (h == 0) {
-					returnString = returnString + matrise[0][l] + " ";
-				}
 
+		for (int h = 0; h < matrise.length; h++) { 
+			for (int l = 0; l < matrise[h].length; l++) {
+				returnString = returnString + Integer.toString(matrise[h][l]) + " ";
 			}
+			returnString = returnString + "\n";
 		}
 
 		return returnString;
@@ -50,10 +48,18 @@ public class Matriser {
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erLik ikke implementert");
+		boolean isEqual = true;
 		
-	}
+		for (int h = 0; h < a.length; h++) {
+			for (int l = 0; l < a[h].length; l++) {
+				if (a[h][l] != b[h][l]) {
+					isEqual = false;
+				}
+			}
+		}
+
+		return isEqual;
+	}	
 	
 	// e)
 	public static int[][] speile(int[][] matrise) {
