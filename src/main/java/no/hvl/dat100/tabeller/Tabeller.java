@@ -7,7 +7,7 @@ public class Tabeller {
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		for (int i : tabell) {
+		for (int _ : tabell) {
 			System.out.print(tabell + " ");
 		}
 
@@ -42,10 +42,15 @@ public class Tabeller {
 
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
+		boolean finnes = false;
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden finnesTall ikke implementert");
+		for (int i = 0; i < tabell.length; i++) {
+			if (tabell[i] == tall) {
+				finnes = true;
+			}
+		}
 
+		return finnes;
 	}
 
 	// e)
