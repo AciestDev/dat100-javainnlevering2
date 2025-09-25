@@ -48,17 +48,22 @@ public class Matriser {
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
 
-		boolean isEqual = true;
-		
-		for (int h = 0; h < a.length; h++) {
-			for (int l = 0; l < a[h].length; l++) {
-				if (a[h][l] != b[h][l]) {
-					isEqual = false;
+		if (a.length == b.length) {
+			for (int h = 0; h < a.length; h++) {
+				if (a[h].length == b[h].length) {
+					for (int l = 0; l < a[h].length; l++) {
+						if (a[h][l] != b[h][l]) {
+							return false;
+						}
+					}
+				} else {
+					return false;
 				}
 			}
+		} else {
+			return false;
 		}
-
-		return isEqual;
+		return true;
 	}	
 	
 	// e)
