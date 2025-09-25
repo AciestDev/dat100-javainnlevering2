@@ -2,6 +2,17 @@ package no.hvl.dat100.matriser;
 
 public class Matriser {
 
+	public static void main(String[] args) {
+		int[][] temp = {{1,2,3,4},
+						{5,6,7,8} };
+		int[][] temp2 = {{1,2,3},
+						 {4,5,6},
+						 {7,8,9} };
+
+		int[][] newList = speile(temp);
+		skrivUt(newList);
+	}
+
 	// a)
 	public static void skrivUt(int[][] matrise) {
 		
@@ -69,17 +80,36 @@ public class Matriser {
 	// e)
 	public static int[][] speile(int[][] matrise) {
 
-		// TODO
+		int[][] tempList = new int[matrise.length][];
+		for (int h = 0; h < matrise[h].length; h++) {
+			int[][] newList = new int[matrise[h].length][];
+			
+		
+		}
 
-		throw new UnsupportedOperationException("Metoden speile ikke implementert");
-	
+		
+		return tempList;
 	}
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
-	
+		int[][] nyTabell = new int[0][0]; 
+
+		if (a.length > b.length) {
+			nyTabell = new int[a.length][];
+		
+			for (int h = 0; h < a.length; h++) {
+				nyTabell[h] = new int[b[0].length];
+		}
+
+		} else {
+			nyTabell = new int[b.length][];
+		
+			for (int h = 0; h < b.length; h++) {
+				nyTabell[h] = new int[a[0].length];
+			}
+		}
+		return nyTabell;
 	}
 }
