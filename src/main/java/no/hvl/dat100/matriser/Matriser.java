@@ -3,16 +3,16 @@ package no.hvl.dat100.matriser;
 public class Matriser {
 
 	public static void main(String[] args) {
-		int[][] temp = {{1,2,3,4},
-						{5,6,7,8} };
+		int[][] temp = {{1,2},
+						{3,4},
+						{5,6},
+						{7,8} };
 		int[][] temp2 = {{1,2,3},
-						 {4,5,6},
-						 {7,8,9} };
+						 {4,5,6} };
 
-		int[][] newList = speile(temp);
+		int[][] newList = multipliser(temp, temp2);
 		skrivUt(newList);
 	}
-
 	// a)
 	public static void skrivUt(int[][] matrise) {
 		
@@ -80,35 +80,40 @@ public class Matriser {
 	// e)
 	public static int[][] speile(int[][] matrise) {
 
-		int[][] tempList = new int[matrise.length][];
-		for (int h = 0; h < matrise[h].length; h++) {
-			int[][] newList = new int[matrise[h].length][];
-			
-		
-		}
+		int[][] newList = new int[matrise[0].length][matrise.length];
 
+		for (int h = 0; h < newList.length; h++) {
+			for(int l = 0; l < newList[h].length;l++) {
+			newList[h][l] = matrise[l][h];
+			}
+		}
 		
-		return tempList;
+		return newList;
 	}
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
 
-		int[][] nyTabell = new int[0][0]; 
+		int[][] nyTabell = new int[0][0];
 
-		if (a.length > b.length) {
-			nyTabell = new int[a.length][];
-		
-			for (int h = 0; h < a.length; h++) {
-				nyTabell[h] = new int[b[0].length];
-		}
-
-		} else {
-			nyTabell = new int[b.length][];
-		
-			for (int h = 0; h < b.length; h++) {
-				nyTabell[h] = new int[a[0].length];
+		if (a[0].length == b.length || a.length == b[0].length) {
+			if (a.length > b.length) {
+				nyTabell = new int[a.length][];
+			
+				for (int h = 0; h < a.length; h++) {
+					nyTabell[h] = new int[b[0].length];
 			}
+
+			} else {
+				nyTabell = new int[b.length][];
+			
+				for (int h = 0; h < b.length; h++) {
+					nyTabell[h] = new int[a[0].length];
+				}
+			}
+
+        } else {
+			throw new IllegalArgumentException("Cannot multiply: a[0].length != b.length");
 		}
 		return nyTabell;
 	}
